@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="container" type="id" />
+    <item name="observable_recyclerview" type="id" />
+    <item name="search_view" type="id" />
+    <item name="card_view" type="id" />
+    <item name="toolbar_search" type="id" />
+    <item name="iv_1" type="id" />
+    <item name="tv_title" type="id" />
+    <item name="tv_shop" type="id" />
+    <item name="tv_price" type="id" />
+</resources>

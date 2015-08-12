@@ -1,0 +1,15 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="id.angga.democodetokopedia.containersearchproduct.activity.SearchActivity">
+
+    <fragment
+        android:id="@id/container"
+        android:name="id.angga.democodetokopedia.containersearchproduct.fragment.BlankFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_result_search" />
+
+    <include layout="@layout/toolbar_search_activity" />
+</RelativeLayout>
