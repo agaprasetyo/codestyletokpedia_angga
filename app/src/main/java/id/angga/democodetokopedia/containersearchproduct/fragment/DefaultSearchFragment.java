@@ -8,17 +8,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import id.angga.democodetokopedia.R;
-import id.angga.democodetokopedia.containersearchproduct.containlistener.SearchInteractionFragmentListener;
 
-public class BlankFragment extends Fragment {
+public class DefaultSearchFragment extends Fragment {
 
-    private SearchInteractionFragmentListener mListener;
+    private OnFragmentInteractionListener mListener;
 
-    public static BlankFragment newInstance() {
-        return new BlankFragment();
+    public static DefaultSearchFragment newInstance() {
+        return new DefaultSearchFragment();
     }
 
-    public BlankFragment() {
+    public DefaultSearchFragment() {
         // Required empty public constructor
     }
 
@@ -31,14 +30,14 @@ public class BlankFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank, container, false);
+        return inflater.inflate(R.layout.fragment_default_search, container, false);
     }
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         try {
-            mListener = (SearchInteractionFragmentListener) activity;
+            mListener = (OnFragmentInteractionListener) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString()
                     + " must implement OnFragmentInteractionListener");
@@ -49,5 +48,9 @@ public class BlankFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    public interface OnFragmentInteractionListener extends BaseFragmentListener {
+
     }
 }

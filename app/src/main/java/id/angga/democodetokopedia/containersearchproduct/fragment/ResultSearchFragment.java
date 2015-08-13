@@ -26,7 +26,6 @@ import java.util.Map;
 import id.angga.democodetokopedia.R;
 import id.angga.democodetokopedia.app.MainApplication;
 import id.angga.democodetokopedia.containersearchproduct.adapter.ProductListAdapter;
-import id.angga.democodetokopedia.containersearchproduct.containlistener.SearchInteractionFragmentListener;
 import id.angga.democodetokopedia.contracts.DummyJsonResult;
 import id.angga.democodetokopedia.contracts.TagRequest;
 import id.angga.democodetokopedia.contracts.WebServiceURL;
@@ -39,7 +38,7 @@ public class ResultSearchFragment extends Fragment implements ObservableScrollVi
 
     private static final String ARG_PARAM_QUERY_SEARCH = "ARG_PARAM_QUERY_SEARCH";
 
-    private SearchInteractionFragmentListener mListener;
+    private OnFragmentInteractionListener mListener;
     private ProductListAdapter productListAdapter;
 
     private ObservableRecyclerView recyclerView;
@@ -97,7 +96,7 @@ public class ResultSearchFragment extends Fragment implements ObservableScrollVi
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         try {
-            mListener = (SearchInteractionFragmentListener) activity;
+            mListener = (OnFragmentInteractionListener) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString()
                     + " must implement SearchInteractionFragmentListener");
@@ -186,5 +185,9 @@ public class ResultSearchFragment extends Fragment implements ObservableScrollVi
         public void onClick(View v) {
             recyclerView.smoothScrollToPosition(0);
         }
+    }
+
+    public interface OnFragmentInteractionListener extends BaseFragmentListener {
+
     }
 }

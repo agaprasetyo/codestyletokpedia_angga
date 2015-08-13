@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@id/container"
-        android:name="id.angga.democodetokopedia.containersearchproduct.fragment.BlankFragment"
+        android:name="id.angga.democodetokopedia.containersearchproduct.fragment.DefaultSearchFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/fragment_result_search" />

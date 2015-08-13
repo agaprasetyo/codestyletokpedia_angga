@@ -26,14 +26,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected abstract int getLayoutResourceId();
 
-    protected int getScreenHeight() {
-        return findViewById(android.R.id.content).getHeight();
-    }
-
-    protected int getScreenWidth() {
-        return findViewById(android.R.id.content).getWidth();
-    }
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -59,14 +51,14 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onSaveInstanceState(savedState);
     }
 
-    protected void replaceFragmentBackStack(Fragment fragment) {
+    public void replaceFragmentBackStack(Fragment fragment) {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.container, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 
-    protected void replaceFragmentNoBackStack(Fragment fragment) {
+    public void replaceFragmentNoBackStack(Fragment fragment) {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
         fragmentTransaction.replace(R.id.container, fragment);
